@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_clone/model/Movie.dart';
+import 'package:flutter_netflix_clone/screen/DetailScreen.dart';
 
 class CarouselImage extends StatefulWidget {
   final List<Movie>? movies;
@@ -80,7 +81,16 @@ class _CarouselImageState extends State<CarouselImage> {
                 Container(
                   padding: EdgeInsets.only(right: 10),
                   child: Column(children: <Widget>[
-                    IconButton(onPressed: () {}, icon: Icon(Icons.info)),
+                    IconButton(
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute<Null>(
+                              fullscreenDialog: true,
+                              builder: (BuildContext context) {
+                                return DetailScreen(
+                                    movie: movies![_currentPage]);
+                              }));
+                        },
+                        icon: Icon(Icons.info)),
                     Text(
                       'info',
                       style: TextStyle(fontSize: 11),
