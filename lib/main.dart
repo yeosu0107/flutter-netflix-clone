@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_netflix_clone/screen/HomeScreen.dart';
 import 'package:flutter_netflix_clone/screen/MoreScreen.dart';
+import 'package:flutter_netflix_clone/screen/SearchScreen.dart';
 import 'package:flutter_netflix_clone/widget/BottomBar.dart';
 
 //firebase
@@ -35,7 +36,7 @@ class _MyAppState extends State<MyApp> {
                   physics: NeverScrollableScrollPhysics(),
                   children: [
                     HomeScreen(),
-                    Container(child: Center(child: Text('Search'))),
+                    SearchScreen(),
                     Container(child: Center(child: Text('Save'))),
                     MoreScreen()
                   ]),
